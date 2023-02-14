@@ -11,6 +11,7 @@
   "dependencies": {
     "@apollo/datasource-rest": "^5.0.2",
     "@apollo/server": "^4.3.3",
+    "@apollo/server-plugin-landing-page-graphql-playground": "^4.0.0",
     "@as-integrations/next": "^1.2.0",
     "@types/node": "18.13.0",
     "@types/react": "18.0.27",

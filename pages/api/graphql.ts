@@ -1,5 +1,6 @@
 import { ApolloServer } from '@apollo/server';
 import { startServerAndCreateNextHandler } from '@as-integrations/next';
+import { ApolloServerPluginLandingPageGraphQLPlayground } from '@apollo/server-plugin-landing-page-graphql-playground';
 import WikiPageviewsAPI from '../../graphql/WikiPageviewsAPI';
 import typeDefs from '../../graphql/typeDefs';
 import { WikiPageviewsArgs, DataSources } from '../../graphql/types';
@@ -19,6 +20,7 @@ const resolvers = {
 const server = new ApolloServer({
   resolvers,
   typeDefs,
+  plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
 
 export default startServerAndCreateNextHandler(server, {
