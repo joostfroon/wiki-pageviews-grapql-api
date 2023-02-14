@@ -20,6 +20,8 @@ const resolvers = {
 const server = new ApolloServer({
   resolvers,
   typeDefs,
+  csrfPrevention: true,
+  introspection: true,
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
 
