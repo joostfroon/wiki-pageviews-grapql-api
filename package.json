@@ -1,5 +1,5 @@
 {
-  "name": "wiki",
+  "name": "wiki-pageviews-grapql-api",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "13.1.6",
+    "@apollo/datasource-rest": "^5.0.2",
+    "@apollo/server": "^4.3.3",
+    "@as-integrations/next": "^1.2.0",
     "@types/node": "18.13.0",
     "@types/react": "18.0.27",
     "@types/react-dom": "18.0.10",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
+    "graphql": "^16.6.0",
+    "graphql-tag": "^2.12.6",
     "next": "13.1.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
