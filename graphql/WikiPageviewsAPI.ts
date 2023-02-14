@@ -16,6 +16,7 @@ class WikiPageviewsAPI extends RESTDataSource {
       return { 
         ...article, 
         views: article.views_ceil || 0,
+        url: `https://${article.project}.org/wiki/${article.article}`
       } 
     });
   }

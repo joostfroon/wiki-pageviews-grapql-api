@@ -18,6 +18,7 @@ export interface WikiPageviewsArticle {
   project: string;
   rank: number;
   views: number;
+  url: string;
 }
 
 interface WikiPageviewsItem {

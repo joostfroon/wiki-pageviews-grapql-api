@@ -6,6 +6,7 @@ export default gql`
     project: String!
     views: Int!
     rank: Int!
+    url: String!
   }
   type Query {
     wikiPageviews(
