@@ -36,7 +36,7 @@ Open [http://localhost:3000/api/graphql](http://localhost:3000/api/graphql) with
 
 ## TODOS
 - use codegen
-- tests
+- Jest tests
 - date to enum?
 
 
