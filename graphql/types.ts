@@ -1,10 +1,45 @@
 import WikiPageviewsAPI from './WikiPageviewsAPI';
 
+export enum CountriesEnum {
+  BE,
+  BG,
+  DK,
+  DE,
+  EE,
+  FI,
+  FR,
+  GR,
+  HU,
+  IE,
+  IT,
+  HR,
+  LV,
+  LT,
+  LU,
+  MT,
+  NL,
+  AT,
+  PL,
+  PT,
+  RO,
+  SI,
+  SK,
+  ES,
+  SE,
+  NO,
+  UA,
+  TR,
+  VK,
+  CH,
+  US,
+}
+
 export interface WikiPageviewsArgs {
-  country: string;
+  country: CountriesEnum;
   year: string;
   month: string;
   day: string;
+  limit?: number;
 }
   
 export interface DataSources {
@@ -14,11 +49,10 @@ export interface DataSources {
 }
 
 export interface WikiPageviewsArticle {
-  article: string;
-  project: string;
   rank: number;
   views: number;
   url: string;
+  title: string;
 }
 
 interface WikiPageviewsItem {

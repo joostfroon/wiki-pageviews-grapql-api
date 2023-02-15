@@ -9,10 +9,10 @@ const resolvers = {
   Query: {
     wikiPageviews: async (
       _: { _: any }, 
-      { country, year, month, day }: WikiPageviewsArgs, 
+      { country, year, month, day, limit }: WikiPageviewsArgs, 
       { dataSources }: DataSources
     ) => {
-      return dataSources.wikiPageviewsAPI.getWikiPageviews({ country, year, month, day });
+      return dataSources.wikiPageviewsAPI.getWikiPageviews({ country, year, month, day, limit });
     },
   },
 };
