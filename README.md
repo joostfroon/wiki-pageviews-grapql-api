@@ -18,6 +18,8 @@ query {
 }
 ```
 
+**Maybe the api is still live at [https://main--wiki-pageviews-grapql-api.netlify.app/api/graphql](https://main--wiki-pageviews-grapql-api.netlify.app/api/graphql):**
+
 ## Getting Started
 
 First, run the development server:
@@ -32,5 +34,9 @@ pnpm dev
 
 Open [http://localhost:3000/api/graphql](http://localhost:3000/api/graphql) with your browser to see the result.
 
+## TODOS
+- use codegen
+- tests
+- date to enum?
 
 
