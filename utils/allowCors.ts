@@ -1,4 +1,4 @@
-import { NextApiHandler, NextApiResponse } from 'next';
+import { NextApiHandler } from 'next';
 
 export const allowCors = (fn: NextApiHandler) => async (req: any, res: any) => {
     res.setHeader('Access-Control-Allow-Credentials', true);
@@ -8,6 +8,7 @@ export const allowCors = (fn: NextApiHandler) => async (req: any, res: any) => {
       'Access-Control-Allow-Headers',
       'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version',
     );
+
     if (req.method === 'OPTIONS') {
       res.status(200).end();
       return;
