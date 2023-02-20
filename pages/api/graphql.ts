@@ -1,13 +1,10 @@
 import { ApolloServer } from '@apollo/server';
-import Cors from 'micro-cors';
 import { startServerAndCreateNextHandler } from '@as-integrations/next';
 import { ApolloServerPluginLandingPageGraphQLPlayground } from '@apollo/server-plugin-landing-page-graphql-playground';
 import WikiPageviewsAPI from '../../graphql/WikiPageviewsAPI';
 import typeDefs from '../../graphql/typeDefs';
 import { WikiPageviewsArgs, DataSources } from '../../graphql/types';
-
-// TODO: fix this.
-const cors = Cors() as any;
+import { allowCors } from '../../utils/allowCors';
 
 const resolvers = {
   Query: {
@@ -29,7 +26,7 @@ const server = new ApolloServer({
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
 
-export default cors(startServerAndCreateNextHandler(server, {
+const handler = startServerAndCreateNextHandler(server, {
   context: async () => {
     const { cache } = server;
 
@@ -39,4 +36,6 @@ export default cors(startServerAndCreateNextHandler(server, {
       }
     })
   },
-}));
+});
+
+export default allowCors(handler);
