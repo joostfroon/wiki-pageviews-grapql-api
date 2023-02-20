@@ -1,9 +1,12 @@
 import { ApolloServer } from '@apollo/server';
+import Cors from 'micro-cors';
 import { startServerAndCreateNextHandler } from '@as-integrations/next';
 import { ApolloServerPluginLandingPageGraphQLPlayground } from '@apollo/server-plugin-landing-page-graphql-playground';
 import WikiPageviewsAPI from '../../graphql/WikiPageviewsAPI';
 import typeDefs from '../../graphql/typeDefs';
 import { WikiPageviewsArgs, DataSources } from '../../graphql/types';
+
+const cors = Cors();
 
 const resolvers = {
   Query: {
@@ -25,7 +28,7 @@ const server = new ApolloServer({
   plugins: [ApolloServerPluginLandingPageGraphQLPlayground()],
 });
 
-export default startServerAndCreateNextHandler(server, {
+export default cors(startServerAndCreateNextHandler(server, {
   context: async () => {
     const { cache } = server;
 
@@ -35,4 +38,4 @@ export default startServerAndCreateNextHandler(server, {
       }
     })
   },
-});
+}));
