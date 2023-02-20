@@ -6,7 +6,8 @@ import WikiPageviewsAPI from '../../graphql/WikiPageviewsAPI';
 import typeDefs from '../../graphql/typeDefs';
 import { WikiPageviewsArgs, DataSources } from '../../graphql/types';
 
-const cors = Cors();
+// TODO: fix this.
+const cors = Cors() as any;
 
 const resolvers = {
   Query: {
