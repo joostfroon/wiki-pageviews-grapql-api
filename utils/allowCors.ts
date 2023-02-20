@@ -1,8 +1,8 @@
-export const allowCors = (fn: any) => async (req: any, res: any) => {
+import { NextApiHandler, NextApiResponse } from 'next';
+
+export const allowCors = (fn: NextApiHandler) => async (req: any, res: any) => {
     res.setHeader('Access-Control-Allow-Credentials', true);
     res.setHeader('Access-Control-Allow-Origin', '*');
-    // another common pattern
-    // res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
     res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
     res.setHeader(
       'Access-Control-Allow-Headers',
@@ -12,5 +12,6 @@ export const allowCors = (fn: any) => async (req: any, res: any) => {
       res.status(200).end();
       return;
     }
+
     await fn(req, res);
   };
